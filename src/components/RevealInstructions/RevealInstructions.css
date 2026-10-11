@@ -1,0 +1,129 @@
+.reveal-instructions {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  pointer-events: none;
+  animation: instructionsFadeIn 0.8s cubic-bezier(0.2, 0, 0, 1) 0.3s both;
+}
+
+@keyframes instructionsFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.instructions-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+}
+
+/* Google-style Pill Chip */
+.instructions-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  background: rgba(30, 31, 32, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.badge-text {
+  font-family: var(--google-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e8eaed;
+}
+
+/* Headline */
+.instructions-headline {
+  font-family: var(--google-font);
+  font-size: clamp(34px, 5.5vw, 54px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8);
+}
+
+/* Cue */
+.instructions-cue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.cue-icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.cue-dot {
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--google-blue);
+}
+
+.cue-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--google-blue);
+  animation: cuePulse 2s ease-out infinite;
+}
+
+@keyframes cuePulse {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.cue-text {
+  font-family: var(--google-font);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.key-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  font-family: var(--google-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  font-style: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cue-pulse,
+  .instructions-badge {
+    animation: none;
+  }
+  .reveal-instructions {
+    animation: none;
+  }
+}

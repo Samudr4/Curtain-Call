@@ -1,0 +1,102 @@
+/* =====================================================
+   CurtainCall — Google Design System (Material 3 Dark)
+   ===================================================== */
+
+/* Design tokens */
+:root {
+  /* Google Colors (Dark Theme) */
+  --google-blue:               #8ab4f8;
+  --google-blue-primary:       #1a73e8;
+  --google-blue-hover:         #aecbfa;
+  --google-blue-container:     rgba(138, 180, 248, 0.16);
+  --google-on-blue-container:  #d3e3fd;
+
+  --google-bg:                 #131314;
+  --google-surface:            #1e1f20;
+  --google-surface-elevated:   #28292a;
+  --google-surface-high:       #303134;
+
+  --google-outline:            #3c4043;
+  --google-outline-variant:    #444746;
+
+  --google-text-primary:       #e8eaed;
+  --google-text-secondary:     #9aa0a6;
+  --google-text-tertiary:      #5f6368;
+
+  /* Theatrical accents */
+  --color-red:                 #8B1A1A;
+  --color-red-light:           #c0392b;
+  --color-gold:                #e8c98d;
+  --color-gold-light:          #f1d8a8;
+  --color-ivory:               #f1f3f4;
+  --color-ivory-dim:           #9aa0a6;
+
+  /* Google Typography */
+  --google-font: 'Google Sans', 'Plus Jakarta Sans', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans:   var(--google-font);
+  --font-serif:  var(--google-font);
+
+  /* Material 3 Radii */
+  --radius-pill: 100px;
+  --radius-card: 24px;
+  --radius-input: 28px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--google-font);
+  background-color: var(--google-bg);
+  color: var(--google-text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Prevent body scroll when curtain is active */
+body.curtain-active {
+  overflow: hidden;
+}
+
+/* Focus styles (Google Blue ring) */
+:focus-visible {
+  outline: 2px solid var(--google-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(138, 180, 248, 0.28);
+  color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--google-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--google-outline);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--google-text-tertiary);
+}

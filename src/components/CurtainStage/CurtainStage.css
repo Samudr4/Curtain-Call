@@ -1,0 +1,100 @@
+.curtain-stage {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #1c0808 0%, #0e0406 55%, #060204 100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Disable interaction while confetti fills the screen */
+.curtain-stage.stage-bursting {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Ambient stage lighting ── */
+.stage-lights {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stage-light {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+
+.stage-light--left {
+  width: 45vw;
+  height: 55vh;
+  top: -8vh;
+  left: -8vw;
+  background: radial-gradient(ellipse, rgba(130, 18, 18, 0.22) 0%, transparent 70%);
+  animation: lightPulse 7s ease-in-out infinite;
+}
+
+.stage-light--right {
+  width: 45vw;
+  height: 55vh;
+  top: -8vh;
+  right: -8vw;
+  background: radial-gradient(ellipse, rgba(130, 18, 18, 0.22) 0%, transparent 70%);
+  animation: lightPulse 7s ease-in-out infinite 1.2s;
+}
+
+.stage-light--top {
+  width: 28vw;
+  height: 65vh;
+  top: -25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, rgba(200, 155, 70, 0.07) 0%, transparent 70%);
+  animation: lightPulse 9s ease-in-out infinite 0.6s;
+}
+
+@keyframes lightPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.72; transform: scale(1.05); }
+}
+
+.stage-light--top { transform-origin: top center; }
+
+/* ── Fade-to-black overlay ── */
+.transition-overlay {
+  position: absolute;
+  inset: 0;
+  background: #060204;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+  /* Always in DOM; class toggles the animation */
+  transition: none;
+}
+
+.transition-overlay--visible {
+  animation: fadeToBlack 0.9s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes fadeToBlack {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .stage-light--left,
+  .stage-light--right,
+  .stage-light--top {
+    animation: none;
+  }
+  .transition-overlay--visible {
+    animation: none;
+    opacity: 1;
+  }
+}

@@ -38,7 +38,13 @@ export const LaunchForm: React.FC<LaunchFormProps> = ({ onSubmit, error, onClear
   return (
     <div className="launch-form-wrapper">
       <div className="brand-mark">
-        <span className="brand-icon">🎭</span>
+        <img
+          src="/favicon.svg"
+          alt="CurtainCall Logo"
+          className="brand-logo"
+          width="36"
+          height="36"
+        />
         <span className="brand-name">CurtainCall</span>
       </div>
 

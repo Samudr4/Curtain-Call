@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="8" fill="#0a0305"/>
-  <text x="16" y="22" font-size="18" text-anchor="middle" fill="#c9a96e">🎭</text>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="none" stroke="#c9a96e" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="16" y="17" font-size="17" text-anchor="middle" dominant-baseline="central" font-family="system-ui, -apple-system, 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif" fill="#c9a96e">🎭</text>
 </svg>

@@ -55,24 +55,46 @@ html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  height: 100%;
-  overflow: hidden;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100dvh;
 }
 
 body {
   font-family: var(--google-font);
   background-color: var(--google-bg);
   color: var(--google-text-primary);
-  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100dvh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Prevent body scroll when curtain is active */
+/* On standard desktop screens with adequate height, lock scrolling for zero-scroll single screen */
+@media (min-width: 769px) and (min-height: 640px) {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+/* On mobile, tablet, and short viewports, allow smooth touch scrolling */
+@media (max-width: 768px), (max-height: 639px) {
+  html, body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Prevent body scroll when curtain is active on all devices */
 body.curtain-active {
-  overflow: hidden;
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 /* Focus styles (Google Blue ring) */

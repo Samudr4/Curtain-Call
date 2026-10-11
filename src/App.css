@@ -1,10 +1,19 @@
 .app-root {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  max-height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* On standard desktop with sufficient height: single-screen locked */
+@media (min-width: 769px) and (min-height: 640px) {
+  .app-root {
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    overflow: hidden;
+  }
 }
 
 /* Ambient background */
@@ -58,14 +67,36 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;
-  max-height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(12px, 2.5vh, 28px) 20px;
-  overflow: hidden;
   box-sizing: border-box;
+  padding: max(20px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(28px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+
+@media (min-width: 769px) and (min-height: 640px) {
+  .app-form-screen {
+    height: 100%;
+    max-height: 100vh;
+    padding: clamp(12px, 2.5vh, 28px) 20px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-orb {
+    filter: blur(60px);
+  }
+  .bg-orb--1 {
+    width: 70vw;
+    height: 70vw;
+  }
+  .bg-orb--2 {
+    width: 60vw;
+    height: 60vw;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

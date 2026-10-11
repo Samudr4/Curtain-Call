@@ -47,20 +47,22 @@
 /* Headline */
 .instructions-headline {
   font-family: var(--google-font);
-  font-size: clamp(34px, 5.5vw, 54px);
+  font-size: clamp(24px, 5.5vw, 52px);
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: #ffffff;
   margin: 0;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8);
+  text-wrap: balance;
 }
 
 /* Cue */
 .instructions-cue {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
   margin-top: 4px;
 }
 
@@ -93,14 +95,17 @@
 
 .cue-text {
   font-family: var(--google-font);
-  font-size: 14px;
+  font-size: clamp(12.5px, 3.2vw, 14px);
   font-weight: 400;
   letter-spacing: 0.01em;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 6px;
+  text-align: center;
 }
 
 .key-badge {
@@ -116,6 +121,19 @@
   font-weight: 500;
   color: #ffffff;
   font-style: normal;
+}
+
+@media (max-width: 480px) {
+  .instructions-inner {
+    gap: 14px;
+    padding: 0 16px;
+  }
+  .instructions-badge {
+    padding: 5px 12px;
+  }
+  .badge-text {
+    font-size: 10px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

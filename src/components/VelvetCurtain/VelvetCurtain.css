@@ -356,6 +356,34 @@
   50%       { transform: rotate(var(--td, 1.5deg)); }
 }
 
+/* Responsive drapery for mobile & tablets */
+@media (max-width: 600px) {
+  .vc-valance {
+    height: 60px;
+    top: 12px;
+  }
+  .vc-hem {
+    height: 52px;
+  }
+  .vc-edge {
+    width: 50px;
+  }
+  .vc-tassel {
+    top: 26%;
+  }
+  .vc-tassel-knot {
+    width: 10px;
+    height: 10px;
+  }
+  .vc-tassel-head {
+    width: 14px;
+    height: 16px;
+  }
+  .vc-tassel-thread {
+    height: calc(var(--th, 24px) * 0.7);
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .vc {

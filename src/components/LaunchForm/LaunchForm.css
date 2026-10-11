@@ -7,8 +7,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 820px;
-  padding: 0 24px;
+  max-width: 780px;
+  padding: 0 16px;
   gap: 0;
   animation: formFadeIn 0.6s cubic-bezier(0.2, 0, 0, 1) both;
 }
@@ -29,18 +29,18 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 36px;
+  margin-bottom: clamp(12px, 2vh, 22px);
 }
 
 .brand-icon {
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .brand-name {
   font-family: var(--google-font);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--google-text-primary);
@@ -49,38 +49,38 @@
 /* Headline */
 .headline-block {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: clamp(14px, 2.2vh, 24px);
   width: 100%;
 }
 
 .headline {
   font-family: var(--google-font);
-  font-size: clamp(20px, 3.4vw, 36px);
+  font-size: clamp(22px, 2.7vw, 33px);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--google-text-primary);
-  margin: 0 0 12px 0;
+  margin: 0 0 clamp(4px, 0.7vh, 8px) 0;
   white-space: nowrap;
 }
 
 .subheadline {
   font-family: var(--google-font);
-  font-size: 16px;
+  font-size: clamp(14px, 1.3vw, 15.5px);
   font-weight: 400;
   letter-spacing: 0.01em;
   color: var(--google-text-secondary);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* Form */
 .url-form {
   width: 100%;
-  max-width: 580px;
+  max-width: 660px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: clamp(12px, 1.7vh, 16px);
 }
 
 /* ── Google Search-Style Input Bar ── */
@@ -91,7 +91,7 @@
   border: 1px solid var(--google-outline);
   border-radius: var(--radius-input);
   padding: 0 20px;
-  height: 56px;
+  height: 52px;
   transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
   position: relative;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -133,7 +133,7 @@
   border: none;
   outline: none;
   font-family: var(--google-font);
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 400;
   color: var(--google-text-primary);
   height: 100%;
@@ -151,7 +151,7 @@
   align-items: center;
   gap: 8px;
   font-family: var(--google-font);
-  font-size: 13px;
+  font-size: 12.5px;
   color: #f28b82;
   padding: 0 12px;
   animation: errorSlide 0.2s cubic-bezier(0.2, 0, 0, 1) both;
@@ -167,11 +167,11 @@
   width: 100%;
   background: var(--google-surface);
   border: 1px solid var(--google-outline);
-  border-radius: var(--radius-card);
-  padding: 20px 22px;
+  border-radius: 22px;
+  padding: clamp(16px, 2.2vh, 22px) clamp(20px, 2.4vw, 26px);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: clamp(12px, 1.6vh, 16px);
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
@@ -199,17 +199,17 @@
 
 .effects-card-title {
   font-family: var(--google-font);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--google-text-primary);
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .effects-card-subtitle {
   font-family: var(--google-font);
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--google-text-secondary);
   margin: 3px 0 0 0;
   letter-spacing: 0.01em;
@@ -218,7 +218,7 @@
 .effects-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: clamp(12px, 1.5vh, 15px);
 }
 
 .effects-divider {
@@ -230,7 +230,7 @@
 .effect-item {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(6px, 1vh, 9px);
   transition: opacity 0.25s ease;
 }
 
@@ -289,9 +289,9 @@
 
 /* ── Authentic Google Material 3 Switch ── */
 .toggle-switch {
-  width: 52px;
-  height: 32px;
-  border-radius: 16px;
+  width: 48px;
+  height: 28px;
+  border-radius: 14px;
   background: #36343b;
   border: 2px solid #8e8a93;
   position: relative;
@@ -304,10 +304,10 @@
 
 .toggle-thumb {
   position: absolute;
-  top: 6px;
-  left: 6px;
-  width: 16px;
-  height: 16px;
+  top: 5px;
+  left: 5px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: #938f99;
   transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
@@ -319,8 +319,8 @@
 }
 
 .toggle-switch.toggle-on .toggle-thumb {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   top: 2px;
   left: 2px;
   transform: translateX(20px);
@@ -341,13 +341,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding-left: 30px;
+  gap: 14px;
+  padding-left: 28px;
 }
 
 .control-label {
   font-family: var(--google-font);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 500;
   color: var(--google-text-secondary);
   white-space: nowrap;
@@ -358,17 +358,17 @@
   border: 1px solid var(--google-outline);
   border-radius: 20px;
   background: transparent;
-  padding: 3px;
-  gap: 2px;
+  padding: 2.5px;
+  gap: 2.5px;
 }
 
 .seg-btn {
   background: transparent;
   border: none;
   border-radius: 16px;
-  padding: 6px 14px;
+  padding: 5px 13px;
   font-family: var(--google-font);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 500;
   color: var(--google-text-secondary);
   cursor: pointer;
@@ -394,9 +394,9 @@
 
 .effect-hint {
   font-family: var(--google-font);
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--google-text-secondary);
-  margin: 2px 0 0 30px;
+  margin: 1px 0 0 28px;
   letter-spacing: 0.01em;
   line-height: 1.4;
   transition: all 0.2s ease;
@@ -408,7 +408,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  height: 52px;
+  height: 48px;
   padding: 0 36px;
   background: var(--google-blue-primary);
   border: none;
@@ -461,23 +461,23 @@
 
 /* Footer */
 .form-footer {
-  margin-top: 36px;
+  margin-top: clamp(12px, 2vh, 20px);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: clamp(6px, 1vh, 9px);
 }
 
 .divider-line {
-  width: 48px;
+  width: 44px;
   height: 1px;
   background: var(--google-outline);
 }
 
 .footer-note {
   font-family: var(--google-font);
-  font-size: 12px;
+  font-size: 11.5px;
   letter-spacing: 0.02em;
   color: var(--google-text-tertiary);
   text-align: center;
